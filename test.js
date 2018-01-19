@@ -21,3 +21,25 @@ test('version strings', t => {
       "other"]
   );
 });
+
+
+test('partial version strings', t => {
+  var sorted =
+    ["3.27.3",
+      "3.27",
+      "3.1",
+      "other",
+      "3.28",
+      "3.29.1"].sort(naturalSort());
+
+  t.deepEqual(
+    sorted,
+    ["3.1",
+      "3.27",
+      "3.27.3",
+      "3.28",
+      "3.29.1",
+      "other"]
+  );
+});
+
